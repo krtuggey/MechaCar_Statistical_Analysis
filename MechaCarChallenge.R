@@ -2,10 +2,11 @@
   > #Load necessary packages
   > library(dplyr)
   > library(tidyverse)
+
 > #Import and Read the CSV File as DataFrame
   > Car_Data <- read.csv('MechaCar_mpg.csv')
-  > View(Car_Data)
-> #generate multiple linear regression model
+
+> # multiple linear regression model
   > lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data =Car_Data)
 
 Call:
@@ -18,7 +19,7 @@ Coefficients:
 ground_clearance               AWD  
 3.546e+00        -3.411e+00  
 
-> #generate summary statistics
+> #summary statistics
   > summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data =Car_Data)) 
 
 Call:
@@ -43,3 +44,21 @@ ground_clearance  3.546e+00  5.412e-01   6.551 5.21e-08 ***
 Residual standard error: 8.774 on 44 degrees of freedom
 Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
 F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+
+> #Deliverable 2: Create Visualizations for the Trip Analysis
+  > #Import and Read the CSV File as DataFrame
+  > Coil_Data <- read.csv('Suspension_Coil.csv')
+
+> #mean, median, variance, and standard deviation
+  > Mean = mean(Coil_Data$PSI)
+  > Median=median(Coil_Data$PSI)
+  > Variance=var(Coil_Data$PSI)
+  > SD = sd(Coil_Data$PSI)
+
+> #Total_Summary Data Frame
+  > total_Summary <- data.frame(Mean,Median,Variance,SD)
+
+> #Lot_Summary Data Frame
+  > lot_summary <- Coil_Data %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI),Median = median(PSI),Variance = var(PSI),SD = sd(PSI), .groups = 'keep') 
+
+
