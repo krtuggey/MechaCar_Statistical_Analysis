@@ -17,3 +17,7 @@
 
 ## T-Tests on Suspension Coils
 
+- In these t-tests, we find that the p values for lot 1 and lot 2 are 1 and 0.6072, respectively. Lot 3's p value is 0.04168. Additionally, the data shows that lot 3 has a lower mean and the most variance. To summarize, lot 3's performance should be addressed or simply not used at all in the production of the MechaCar.
+
+![3](https://user-images.githubusercontent.com/84139177/135759554-19760bed-6da7-4054-abdd-e226dbadb888.png)
+
